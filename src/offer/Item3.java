@@ -1,10 +1,22 @@
 package offer;
 
 /**
- * 面试题一：二维数组查找
+ * 面试题3：二维数组查找
+ *  一个二维数组，每一行按照从左到右递增，每一列按照从上到下递增，查找数组中是否存在某个数。如数组：
+ * 1  2  8    9
+ * 2  4  9   12
+ * 4  7  10  13
+ * 6  8  11  15
+ * 思路：从右上角或左下角就可以每一步排除一列或一行
  * Created by ghb on 2016/12/22.
  */
-public class content1 {
+public class Item3 {
+    /**
+     * 二维数组查找
+     * @param array 已知的数组
+     * @param num 待查找的数
+     * @return
+     */
     public static boolean find(int[][] array, int num) {
         boolean result = false;
         int rows = array.length;//行数
