@@ -1,4 +1,4 @@
-package test;
+package basic;
 
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
@@ -10,7 +10,7 @@ import java.util.concurrent.locks.ReentrantLock;
 /**
  * Created by ghb on 2016/12/29.
  */
-public class test {
+public class IntTest {
     public static void main(String[] args) {
         int i0 = 127;
         Integer i1 = 127;

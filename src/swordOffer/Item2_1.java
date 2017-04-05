@@ -1,4 +1,4 @@
-package offer;
+package swordOffer;
 
 /**
  * Java单例模式(推荐一)

@@ -1,10 +1,12 @@
-package huaweiks;
+package huawei;
 
 /**
  * Created by ghb on 2017/3/24.
  */
 import java.util.Scanner;
-public class Main2 {
+
+//华为上机二
+public class Main5 {
 
     public static int[] lReverse(int[] num) {
         int temp1,temp2;

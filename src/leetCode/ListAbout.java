@@ -5,7 +5,7 @@ import java.util.Hashtable;
 /**
  * Created by ghb on 2017/4/2.
  */
-public class List {
+public class ListAbout {
 
     public class ListNode {
         int val;
@@ -16,11 +16,10 @@ public class List {
             next = null;
         }
     }
-    //链表逆序递归
 
+    //单链表逆序递归
     /**
-     * 1 非递归
-     * 无额外空间
+     * 1 非递归 无额外空间
      * 每次需要保留后一个节点
      */
 
@@ -44,6 +43,7 @@ public class List {
     }
 
     /**
+     * 单链表逆序递归
      * 2 递归的思想
      * 先将当前的表头节点从链表中拆出来，然后对剩余的节点进行逆序
      */
@@ -63,7 +63,7 @@ public class List {
     }
 
     /**
-     * 从m到n逆序
+     * 单链表从m到n逆序
      */
 
     public ListNode reverseBetween(ListNode head, int m, int n) {

@@ -1,11 +1,13 @@
-package huaweiks;
+package huawei;
 
 import java.util.Scanner;
 
 /**
  * Created by ghb on 2017/3/24.
  */
-public class Main {
+
+//华为上机1
+public class Main4 {
     public static int reverseAdd(String str){
         if (str.length()==1)
             return Integer.parseInt(str);

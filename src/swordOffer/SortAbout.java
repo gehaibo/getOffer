@@ -1,10 +1,15 @@
-package offer;
+package swordOffer;
 
 /**
- * Created by ghb on 2017/2/20.
+ * 排序相关
  */
-public class Item30 {
-
+public class SortAbout {
+    /**
+     * offer-30:快排
+     * @param data
+     * @param low
+     * @param hight
+     */
     private static void quickSort(int data[], int low, int hight)
     {
         int i=low,j=hight;
@@ -26,8 +31,13 @@ public class Item30 {
         if(j>low) quickSort(data, low, j);
     }
 
-    public static void main(String[] args)
+
+    public static void main(StringAbout[] args)
     {
+
+        /**
+         * offer-30:快排
+         */
         int[] data = new int[]{4, 5, 2, 6, 1, 0, 8};
         quickSort(data, 0, data.length-1);
         for(int n : data)

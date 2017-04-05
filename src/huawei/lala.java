@@ -1,4 +1,4 @@
-package huaweiks;
+package huawei;
 
 /**
  * Created by ghb on 2017/3/24.
@@ -22,9 +22,9 @@ public class lala {
         System.out.println(d);
         System.out.println(b);
         System.out.println(c);
-        //String str2=
+        //StringAbout str2=
 
-//        String str2=str.substring(1,str.length())+str.substring(0,1);
+//        StringAbout str2=str.substring(1,str.length())+str.substring(0,1);
 //        System.out.println(str2);
         //System.out.println(str2);
 

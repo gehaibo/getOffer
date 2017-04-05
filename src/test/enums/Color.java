@@ -1,4 +1,4 @@
-package test;
+package test.enums;
 
 /**
  * Created by ghb on 2017/1/5.

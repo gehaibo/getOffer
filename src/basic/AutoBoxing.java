@@ -1,4 +1,4 @@
-package Javabase;
+package basic;
 
 /**
  * Created by ghb on 2016/12/29.
@@ -20,7 +20,7 @@ public class AutoBoxing {
         int int2 = Integer.parseInt(intStr);
 
         int it1 = 111;
-        //1.通过String.valueOf(xxx)转换String str1 = String.valueOf(int1);
+        //1.通过String.valueOf(xxx)转换String str1 = StringAbout.valueOf(int1);
         //2.将基本变量和""进行连接运算String str2 = it1 + "";
 
         Integer a = new Integer(100);
@@ -43,7 +43,7 @@ public class AutoBoxing {
         //编译时无法确定，不能引用常量池中字符串
         String s5 = s1+s2;
 
-//        String s6 = new String("abc");
+//        StringAbout s6 = new StringAbout("abc");
 //        System.out.println(s3 == s4);//true
 //        System.out.println(s3 == s5);//false
 //        System.out.println(s3 == s6);//false
