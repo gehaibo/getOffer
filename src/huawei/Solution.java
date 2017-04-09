@@ -13,7 +13,7 @@ public class Solution {
      */
     // 不要修改以下函数内容
     public void swapWithZero(int[] array, int len, int n) {
-        // interviewCollection.Main.SwapWithZero(array, len, n);
+        // Others.Main.SwapWithZero(array, len, n);
     }
     // 不要修改以上函数内容
 

@@ -1,4 +1,4 @@
-package swordOffer;
+package 剑指offer;
 
 /**
  * 单例模式（推荐二）

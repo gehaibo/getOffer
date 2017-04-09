@@ -1,5 +1,6 @@
 package leetCode;
 
+import java.util.HashMap;
 import java.util.Hashtable;
 
 /**
@@ -17,7 +18,8 @@ public class ListAbout {
         }
     }
 
-    //单链表逆序递归
+    //单链表逆序
+
     /**
      * 1 非递归 无额外空间
      * 每次需要保留后一个节点
@@ -166,10 +168,31 @@ public class ListAbout {
         for (int i = 1; i < len - n % len; i++) {
             head = head.next;
         }
-        
+
         p = head.next;
         head.next = null;
 
         return p;
     }
+
+    //两个链表的第一个公共结点
+    public ListNode FindFirstCommonNode(ListNode pHead1, ListNode pHead2) {
+        ListNode current1 = pHead1;
+        ListNode current2 = pHead2;
+        HashMap<ListNode, Integer> hashMap = new HashMap<ListNode, Integer>();
+        while (current1 != null) {
+            hashMap.put(current1, null);
+            current1 = current1.next;
+        }
+        while (current2 != null) {
+            if (hashMap.containsKey(current2))
+                return current2;
+
+            current2 = current2.next;
+        }
+        return null;
+
+    }
+
+
 }

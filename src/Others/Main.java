@@ -1,4 +1,4 @@
-package interviewCollection; /**
+package Others; /**
  * Created by ghb on 2017/3/23.
  */
 import java.util.Scanner;

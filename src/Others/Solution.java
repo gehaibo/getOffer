@@ -1,4 +1,4 @@
-package interviewCollection;
+package Others;
 
 /**
  * Created by ghb on 2017/3/9.
@@ -21,7 +21,7 @@ public class Solution {
 
         ListNode p = head;
         ListNode f = head.next;
-        while ( f.next !=null && f.next.next !=null ){//locate p at half of the interviewCollection.ListNode
+        while ( f.next !=null && f.next.next !=null ){//locate p at half of the Others.ListNode
             p = p.next;
             f = f.next.next;
         }
