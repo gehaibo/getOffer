@@ -499,7 +499,7 @@ Duck: 'it's generally a frog or a worm. The question is, what did the
 archbishop find?'
 
 The Mouse did not notice this question, but hurriedly went on, '"--found
-it advisable to go with Edgar Atheling to meet William and swordOffer him the
+it advisable to go with Edgar Atheling to meet William and 剑指offer him the
 crown. William's conduct at first was moderate. But the insolence of his
 Normans--" How are you getting on now, my dear?' it continued, turning
 to Alice as it spoke.
@@ -1589,7 +1589,7 @@ Alice looked all round the table, but there was nothing on it but tea.
 
 'There isn't any,' said the March Hare.
 
-'Then it wasn't very civil of you to swordOffer it,' said Alice angrily.
+'Then it wasn't very civil of you to 剑指offer it,' said Alice angrily.
 
 'It wasn't very civil of you to sit down without being invited,' said
 the March Hare.

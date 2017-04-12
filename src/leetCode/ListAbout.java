@@ -26,19 +26,20 @@ public class ListAbout {
      */
 
     public static ListNode reverse1(ListNode head) {
-        if (head == null) return head;
+        if (head == null || head.next == null) return head;
 
         //需要两个指针一个记录前一个节点，一个保存下一个断开的，当前节点为head
         ListNode before = null;
-        ListNode next = null;
+        ListNode next = null;//前面指针
         while (head != null) {
 
-            //1.保存下一个节点
+            //1.保存当前的下一个节点下一步断开
             next = head.next;
             //2.当前指向前一个节点
             head.next = before;
-
+            //3.before后移
             before = head;
+            //4.当前指针后移
             head = next;
         }
         return before;
@@ -128,10 +129,11 @@ public class ListAbout {
     }
 
     /**
-     * 删除已经排好序的
+     * 删除已经排好序的，重复节点保留
      */
 
     public ListNode deleteDuplicates(ListNode head) {
+
 
         ListNode cur = head;
         while (cur != null) {
@@ -142,6 +144,30 @@ public class ListAbout {
         }
         return head;
     }
+    /**
+     * 重复节点不保留
+     */
+//    ListNode deleteDuplication2(ListNode head)
+//    {
+//        if (head == null)
+//            return head;
+//        ListNode newHead = new ListNode(0);
+//        newHead.next = head;
+//        ListNode pre = newHead;//保存前一个
+//        ListNode cur = head;//当前
+//        while (cur != null) {
+//            while (cur.next != null && cur.val == cur.next.val) {//指向最后一个重复
+//                cur = cur.next;
+//            }
+//            if (pre.next == cur) {//无重复的，pre后移
+//                pre = pre.next;
+//            } else {//pre直接指向新的不重复的
+//                pre.next = cur.next;
+//            }
+//            cur = cur.next;
+//        }
+//        return newHead.next;
+//    }
 
     /**
      * 给定列表，将列表向右旋转k个位置，其中k是非负数。

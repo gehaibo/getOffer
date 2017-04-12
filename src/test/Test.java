@@ -1,30 +1,34 @@
 package test;
 
+
+import java.util.ArrayDeque;
+import java.util.Queue;
+
 /**
  * Created by ghb on 2017/4/5.
  */
 public class Test {
-    static int func()
-    {
-        int i,j,k=0;
-        for(i=0,j=-1;j==0;i++,j++)
-        {
-            k++;
+    public class ListNode {
+        int val;
+        ListNode next;
+
+        ListNode(int x) {
+            val = x;
+            next = null;
         }
-        return k;
     }
 
-    public int aaa() {
-        int x = 1;
 
-        try {
-            return ++x;
-        } catch (Exception e) {
-
-        } finally {
-            ++x;
+    public ListNode deleteDuplication(ListNode pHead) {
+        if (pHead.next == null) return null;
+        ListNode cur = pHead;
+        while (cur != null) {
+            while (cur.next != null && cur.val == cur.next.val) {
+                cur.next = cur.next.next;
+            }
+            cur = cur.next;
         }
-        return x;
+        return pHead;
     }
 
     public static void main(String[] args) {
@@ -51,7 +55,21 @@ public class Test {
 //        int y = t.aaa();
 //        System.out.println("测试输出"+y);
 
+//        String a = "123";
+//        String aa = "123";
+//        System.out.println(a.equals(aa));
 
+        //run.run();
+
+        Queue<Integer> queue = new ArrayDeque<>();
+        queue.offer(1);
+        queue.offer(2);
+        queue.offer(3);
+        System.out.println(queue.size());
+        Integer out;
+        while ((out = queue.poll()) != null) {
+            System.out.print(out);
+        }
     }
 
 }
