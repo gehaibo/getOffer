@@ -5,7 +5,7 @@ package leetCode;
  */
 public class StringAbout {
     //1.1字符串字符是否完全相等
-    public static boolean isUnique(java.lang.String str) {
+    public static boolean isUnique(String str) {
         if (str.length() > 256) return false;
 
         boolean[] charSet = new boolean[256];
@@ -20,9 +20,9 @@ public class StringAbout {
         return true;
     }
 
-    //返回首个出现的字符
+    //返回首个重复出现的字符
 
-    public char findFirstRepeat(String A, int n) {
+    public static char findFirstRepeat(String A, int n) {
         int[] ch = new int[256];
         for (int i = 0; i < n; i++) {
             ch[A.charAt(i)]++;
@@ -37,6 +37,7 @@ public class StringAbout {
     public static void main(java.lang.String[] args) {
         java.lang.String str = "abcdaAB";
         System.out.println(isUnique(str));
+        System.out.println(findFirstRepeat(str,8));
 
     }
 }

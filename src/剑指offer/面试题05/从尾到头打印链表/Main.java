@@ -18,14 +18,15 @@ public class Main {
             this.val = val;
         }
     }
-    //思路一实现：递归
+    //思路一实现：递归,退出条件，最后一个，即下一个为null
     public ArrayList<Integer> printListFromTailToHead(ListNode listNode){
-        ArrayList<Integer> list = new ArrayList<Integer>();
+        ArrayList<Integer> list = new ArrayList();
         if(listNode != null){
             if(listNode.next != null){
                 list = printListFromTailToHead(listNode.next);//此处要返回，如果用this.printListFromTailToHead()则会出现list中只有listNode的头结点
             }
             list.add(listNode.val);
+            //System.out.println(listNode.val);
         }
         return list;
     }

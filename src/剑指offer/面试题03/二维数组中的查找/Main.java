@@ -7,33 +7,27 @@ package 剑指offer.面试题03.二维数组中的查找;
  * 2  4  9   12
  * 4  7  10  13
  * 6  8  11  15
- * 思路：从右上角或左下角就可以每一步排除一列或一行
- * 请完成一个函数，输入这样的一个二维数组和一个整数，判断数组中是否含有该整数。
- * <p>
- * 思路：根据数组有序的规律，可以从左下角或右上角开始搜索。
+ * 思路：从可以从左下角或右上角开始搜索，就可以每一步排除一列或一行
  * 当从右上角开始搜索时，target > array[row][col]则向下移，即row++;
- * target < array[row][col]则向左移，即col--。
- * <p>
+ * target < array[row][col]则向左移，即col--
+ *
  * PS:二维数组a[][]的行长度为a.length,列长度为a[0].length。
  */
 public class Main {
     public static boolean find(int[][] array, int num) {
-        boolean result = false;
-        int rows = array.length;//行数
-        int columns = array[0].length;//列数
-        int row = 0;
-        int column = columns - 1;//按数组显示
-        while (row < rows && column >= 0) {
-            if (array[row][column] == num) {
-                result = true;
-                break;
-            } else if (array[row][column] < num){
-                row++;
-            }else {
-                column--;
+        int row = 0;//行号
+        int col = array[0].length - 1;//列号
+
+        while(row <= array.length - 1 && col >= 0){
+            if(num < array[row][col]){
+                col --;
+            }else if(num > array[row][col]){
+                row ++;
+            }else{
+                return true;
             }
         }
-        return result;
+        return false;
     }
 
     public static void main(String[] args) {
