@@ -37,6 +37,21 @@ public class Main {
         }
         return f.mod(t).intValue();
     }
+    //
+    public int Fibonacci22(int n) {
+        int[] result={0,1};
+        if (n<2) return result[n];
+
+        int f1 = 0;
+        int f2 = 1;
+        int f=0;
+        for (int i = 2; i <= n; ++i) {
+            f=f1+f2;
+            f1=f2;//从前往后依次替换
+            f2=f;
+        }
+        return f;
+    }
 
     //动态规划
     public int Fibonacci3(int n) {

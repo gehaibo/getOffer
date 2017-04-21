@@ -1,43 +1,29 @@
 package 剑指offer.面试题09.斐波那契数列系列问题.青蛙跳台阶;
 
 /**
- * 题目：一只青蛙一次可以跳上1级台阶，也可以跳上2级……它也可以跳上n级。求该青蛙跳上一个n级的台阶总共有多少种跳法。
+ * 题目：一只青蛙一次可以跳上1级台阶，也可以跳上2级。求该青蛙跳上一个n级的台阶总共有多少种跳法。
  * <p>
- * 思路：因为n级台阶，第一步有n种跳法：跳1级、跳2级、到跳n级
- * 跳1级，剩下n-1级，则剩下跳法是f(n-1)
- * 跳2级，剩下n-2级，则剩下跳法是f(n-2)
- * 所以f(n) = f(n-1) + f(n-2) + ··· + f(1)
- * 因为f(n-1) = f(n-2) + f(n-3) + ··· + f(1)
- * 所以f(n) = 2 * f(n-1)
+ * 思路：跳上n阶台阶有f(n)种跳法，若第一步跳上1阶，剩下n-1阶有f(n-1)种，若第一步跳上2阶，剩下n-2阶有f(n-2)种.
+ * 则f(n)=f(n-1)+f(n-2),即为斐波那契数列
+ * n=1时只能跳一阶，n=2时，可以跳1，可以直接跳二;
  */
 public class Main {
-
-    //递归
-    public int JumpFloorII(int target) {
-        if (target <= 2)
-            return target;
-        return 2 * JumpFloorII(target - 1);
+    public int JumpFloor1(int target) {
+        if (target <= 2) return target;
+        return JumpFloor1(target - 1) + JumpFloor1(target - 2);
     }
 
-    //迭代
-    public int JumpFloorII2(int target) {
-        if (target <= 2)
-            return target;
-        int num = 2;
-        while (target-- > 2) {
-            num = 2 * num;//此处可用移位运算符实现，也可用Math.pow()函数实现
-        }
-        return num;
-    }
+    public int JumpFloor2(int target){
+        if (target <= 2) return target;
 
-    //动态规划
-    public int JumpFloorII3(int target) {
-        int [] array = new int[target+1];
-        array[0] = 0;
-        array[1] = 1;
-        for(int i = 2; i <= target; i++) {
-            array[i] = 2 * array[i-1];
+        int f1 = 1;
+        int f2 = 2;
+        int f=0;
+        for (int i = 3; i <= target; ++i) {
+            f=f1+f2;
+            f1=f2;
+            f2=f;
         }
-        return array[target];
+        return f;
     }
 }
