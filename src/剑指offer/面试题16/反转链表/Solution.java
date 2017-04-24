@@ -4,6 +4,7 @@ package 剑指offer.面试题16.反转链表;
  * Created by ghb on 2017/4/13.
  */
 public class Solution {
+
     public class ListNode {
         int val;
         ListNode next;
