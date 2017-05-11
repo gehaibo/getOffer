@@ -1,7 +1,12 @@
 package 剑指offer.面试题56.链表中环的入口节点;
 
 /**
- * Created by ghb on 2017/4/14.
+ * 链表中环的入口节点
+ * 思路：
+ * 1、一快一慢两个指针，相遇位置即在环内
+ * 2、一个回到原点，继续都走一步，直到相遇，相遇的位置即为环入口
+ *
+ *
  */
 public class Main {
 
@@ -14,6 +19,7 @@ public class Main {
             this.val = val;
         }
     }
+
     public ListNode EntryNodeOfLoop(ListNode pHead)
     {
         if(pHead==null||pHead.next==null)return null;

@@ -16,7 +16,7 @@ public class Solution {
             return;
         }
         for (int i = 1; i < a.length; i++) {
-            int temp = a[i];
+            int temp = a[i];//位置可能被覆盖掉
             int pos = i - 1;//前面排好的最末尾
 
             while (pos >= 0 && temp < a[pos]) {
@@ -87,7 +87,7 @@ public class Solution {
         int a[] = {4, 3, 2, 1, 12, 4, 6};
         //insertSort(a);
         //binaryInsertSort(a);
-        //shellSort(a);
+        shellSort(a);
         for (int i = 0; i < a.length; i++) {
             System.out.print(a[i] + " ");
         }

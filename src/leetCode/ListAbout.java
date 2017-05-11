@@ -19,6 +19,70 @@ public class ListAbout {
     }
 
 
+    /**
+     * reorder-list
+     * <p>
+     * <p>
+     * Given a singly linked list L: L0→L1→…→Ln-1→Ln,
+     * reorder it to:                L0→Ln→L1→Ln-1→L2→Ln-2→…
+     * You must do this in-place without altering the nodes' values.
+     * For example,
+     * Given{1,2,3,4}, reorder it to{1,4,2,3}.
+     * <p>
+     * <p>
+     * 思路：1.找到中间节点，2.后半部分逆序，3.依次将后半部分插入前面
+     */
+    public static ListNode reverseNode1(ListNode head) {
+        ListNode temp=null;
+        if (head.next == null || head.next == null) return head;
+
+        temp = reverseNode1(head.next);
+
+        head.next.next = head;
+        head.next = null;
+        return temp;
+    }
+
+    public static ListNode reverseNode2(ListNode head) {
+        if (head == null || head.next == null) return head;
+        //需要两个节点记录当前节点前和后
+        ListNode before = null;
+        ListNode next = null;
+        while (head != null) {
+            next = head.next;
+            head.next = before;
+            before = head;
+            head = next;
+        }
+        return before;
+    }
+    public void reorderList(ListNode head) {
+        if (head==null||head.next==null||head.next.next==null) return ;
+        ListNode mid=findMid(head);
+        ListNode right=reverseNode2(mid);
+        ListNode left=head;
+        while (right.next!=null){
+            ListNode temp=right;
+            right=right.next;
+            //先指向后面，left再指向temp
+            temp.next=left.next;
+            left.next=temp;
+            left=temp.next;
+        }
+    }
+
+    public static ListNode findMid(ListNode head) {
+        ListNode fast = head;
+        ListNode slow = head;
+        while (fast != null && fast.next != null) {
+            fast = fast.next;
+            if (fast.next != null) fast = fast.next;
+
+            slow = slow.next;
+        }
+        return slow;
+    }
+
 
 
     /**
@@ -140,5 +204,33 @@ public class ListAbout {
 
     }
 
+    /**
+     * 判断链表环的起点
+     * 思路：
+     * 1、一快一慢两个指针，相遇位置即在环内
+     * 2、一个回到原点，继续都走一步，直到相遇，相遇的位置即为环入口
+     */
+    public ListNode detectCycle(ListNode head) {
+
+        if (head==null||head.next==null) return null;
+
+        ListNode p=head;
+        ListNode q=head;
+        while (q!=null&&q.next!=null){
+            p=p.next;
+            q=q.next;
+            if (q.next==null) return null;
+            q=q.next;
+            if (p==q){
+                p=head;
+                while (p!=q){
+                    p=p.next;
+                    q=q.next;
+                }
+                if (p==q) return p;
+            }
+        }
+        return null;
+    }
 
 }
