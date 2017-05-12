@@ -3010,7 +3010,7 @@ down on one knee. 'I'm a poor man, your Majesty,' he began.
 
 Here one of the guinea-pigs cheered, and was immediately suppressed by
 the officers of the court. (As that is rather a hard word, I will just
-explain to you how it was done. They had a large canvas bag, which tied
+explain to you how it was done. They had a large canvas 算法分类.背包问题, which tied
 up at the mouth with strings: into this they slipped the guinea-pig,
 head first, and then sat upon it.)
 

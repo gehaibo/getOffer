@@ -29,7 +29,7 @@ public class Main {
         return num;
     }
 
-    //动态规划
+    //算法分类.动态规划
     public int JumpFloorII3(int target) {
         int[] array = new int[target + 1];
         array[0] = 0;
