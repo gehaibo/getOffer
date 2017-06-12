@@ -32,7 +32,7 @@ public class SortAbout {
     }
 
 
-    public static void main(StringAbout[] args)
+    public static void main(String[] args)
     {
 
         /**
