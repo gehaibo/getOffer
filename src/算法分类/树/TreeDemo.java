@@ -509,7 +509,7 @@ public class TreeDemo {
             return;
         }
 
-        Queue<TreeNode> q = new LinkedList<TreeNode>();
+        Queue<TreeNode> q = new LinkedList<>();
         q.offer(root);
 
         while (!q.isEmpty()) {
