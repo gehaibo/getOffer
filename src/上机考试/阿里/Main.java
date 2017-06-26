@@ -24,31 +24,30 @@ public class Main {
         String s = expr.replace(" ", "");
         char[] chars = s.toCharArray();
         Stack stack = new Stack();
-        int count = 16;
+        //int count = 16;
         //System.out.println(chars.length);
         for (int i = 0; i < chars.length; i++) {
             if (chars[i] != '^' && chars[i] != '+' && chars[i] != '*') {
-                if (count <= 0) return -2;
                 stack.push(chars[i]);
-                --count;
+                if (stack.size() > 16) return -2;
             } else {
-                if (chars[i] == '^') {
-                    if (count < 1) return -1;
-                    int temp = Integer.parseInt("" + stack.pop());
-                    stack.push(temp + 1);
-                } else if (chars[i] == '*') {
-                    if (count < 2) return -1;
-                    int temp1 = Integer.parseInt("" + stack.pop());
-                    int temp2 = Integer.parseInt("" + stack.pop());
-                    stack.push(temp1 * temp2);
-                    --count;
-                } else if (chars[i] == '+') {
-                    if (count < 2) return -1;
-                    int temp1 = Integer.parseInt("" + stack.pop());
-                    int temp2 = Integer.parseInt("" + stack.pop());
-                    stack.push(temp1 + temp2);
-                    --count;
-                }
+//                if (chars[i] == '^') {
+//                    if (count < 1) return -1;
+//                    int temp = Integer.parseInt("" + stack.pop());
+//                    stack.push(temp + 1);
+//                } else if (chars[i] == '*') {
+//                    if (count < 2) return -1;
+//                    int temp1 = Integer.parseInt("" + stack.pop());
+//                    int temp2 = Integer.parseInt("" + stack.pop());
+//                    stack.push(temp1 * temp2);
+//                    --count;
+//                } else if (chars[i] == '+') {
+//                    if (count < 2) return -1;
+//                    int temp1 = Integer.parseInt("" + stack.pop());
+//                    int temp2 = Integer.parseInt("" + stack.pop());
+//                    stack.push(temp1 + temp2);
+//                    --count;
+//                }
             }
 
         }
