@@ -12,7 +12,7 @@ public class Solution {
      */
 
     public static void insertSort(int[] a) {
-        if(a == null || a.length <= 1){
+        if (a == null || a.length <= 1) {
             return;
         }
         for (int i = 1; i < a.length; i++) {
@@ -35,7 +35,7 @@ public class Solution {
      * 从第二个依次往前插入，插入时折半查找
      */
     public static void binaryInsertSort(int[] a) {
-        if(a == null || a.length <= 1){
+        if (a == null || a.length <= 1) {
             return;
         }
         for (int i = 1; i < a.length; i++) {
@@ -46,7 +46,9 @@ public class Solution {
             int high = i - 1;
             while (low <= high) {
                 int mid = (low + high) / 2;
-                if (temp < a[mid]) high = mid - 1;
+                if (temp < a[mid])
+                    high = mid - 1;
+
                 else low = mid + 1;
             }
 
@@ -65,12 +67,12 @@ public class Solution {
      * 从第二个依次往前插入，插入时折半查找
      */
 
-    public static void shellSort(int[] a){
-        int d=a.length/2;//增量
-        while (d>=1){//增量几次，每轮需要遍历几次
+    public static void shellSort(int[] a) {
+        int d = a.length / 2;//增量
+        while (d >= 1) {//增量几次，每轮需要遍历几次
             for (int i = 0; i < d; i++) {
                 //下面就是插入排序，从下一个开始，间隔是d
-                for (int j = i+d; j < a.length; j=j+d) {
+                for (int j = i + d; j < a.length; j = j + d) {
                     int temp = a[j];
                     int pos = j - d;
                     while (pos >= 0 && a[pos] > temp) {
@@ -80,9 +82,10 @@ public class Solution {
                     a[pos + d] = temp;
                 }
             }
-            d=d/2;
+            d = d / 2;
         }
     }
+
     public static void main(String[] args) {
         int a[] = {4, 3, 2, 1, 12, 4, 6};
         //insertSort(a);

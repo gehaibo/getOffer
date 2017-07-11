@@ -13,6 +13,7 @@ public class Solution {
      * 从前往后每次选出一个当前最小的放到指定位置
      */
     public static void choseSort(int[] a) {
+        //记录每次要找的最小的位置
         for (int i = 0; i < a.length - 1; i++) {
             int min = i;//每趟记录一个最小的
             //1.找出最小元素
@@ -82,8 +83,8 @@ public class Solution {
     public static void main(String[] args) {
         int a[] = {4, 3, 2, 1, 12, 4, 6};
 
-        //choseSort(a);
-        heapSort(a);
+        choseSort(a);
+        //heapSort(a);
         for (int i = 0; i < a.length; i++) {
             System.out.print(a[i] + " ");
         }

@@ -8,6 +8,7 @@ import 设计模式.建造类.工厂方法模式.Product;
  */
 public class Client {
     public static void main(String[] args) {
+
         Product product= SimpleFactory.create(ConcreteProduct1.class);
     }
 }

@@ -46,7 +46,7 @@ public class StringAbout {
     }
 
     /**
-     * 14:第一个字符和剩下的字符
+     * 28:第一个字符和剩下的字符
      */
     public static void permutation(char[] str){
         if(str == null){
@@ -57,7 +57,7 @@ public class StringAbout {
     }
 
     /**
-     * 面试题14：
+     * 面试题28：
      */
     private static void permutation(char[] str, int begin) {
 

@@ -23,7 +23,7 @@ public class CreateThread {
         thread.start();
 
         //2.Callable创建带有返回值的
-        FutureTask<Integer> task=new FutureTask<Integer>(()->{
+        FutureTask<Integer> task=new FutureTask<>(()->{
             int j = 0;
             for (; j < 100; j++) {
                 System.out.println(Thread.currentThread().getName()+"循环变量i的值："+j);

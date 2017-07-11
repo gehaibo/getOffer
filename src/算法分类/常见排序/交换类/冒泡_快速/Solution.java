@@ -12,14 +12,22 @@ public class Solution {
         if (a == null || a.length <= 1) {
             return;
         }
-        for (int i = 1; i < a.length; i++) {//从第二个开始,共需要n-1趟
+        boolean isSwap ;
+        //从第二个开始,共需要n-1趟
+        for (int i = 1; i < a.length; i++) {
+            // 每次先重置为false
+            isSwap = true;
             for (int j = 0; j < a.length - i; j++) {//j从0开始，j是0至n-1，j+1到n
                 if (a[j] > a[j + 1]) {
                     int temp = a[j];
                     a[j] = a[j + 1];
                     a[j + 1] = temp;
+
+                    isSwap = false;
                 }
             }
+            if (isSwap)
+                break;
         }
     }
 
@@ -57,8 +65,8 @@ public class Solution {
 
     public static void main(String[] args) {
         int a[] = {4, 3, 2, 1, 12, 4, 6};
-        //bubbleSort(a);
-        quickSort(a, 0, 6);
+        bubbleSort(a);
+        //quickSort(a, 0, 6);
         for (int i = 0; i < a.length; i++) {
             System.out.print(a[i] + " ");
         }
