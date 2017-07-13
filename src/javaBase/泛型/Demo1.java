@@ -6,13 +6,13 @@ package javaBase.泛型;
 
 public class Demo1 {
     public static void main(String arsg[]) {
-        Info<String> obj = new InfoImp<String>("www.weixueyuan.net");
+        Info<String> obj = new InfoImp<>("www.weixueyuan.net");
         System.out.println("Length Of String: " + obj.getVar().length());
     }
 }
 
 interface Info<T> {
-    public T getVar();
+    T getVar();
 }
 
 class InfoImp<T> implements Info<T> {
