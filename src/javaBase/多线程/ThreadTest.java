@@ -1,9 +1,12 @@
-package javaBase.thread;
+package javaBase.多线程;
+
+import java.util.concurrent.locks.ReentrantLock;
 
 /**
  * Created by ghb on 2017/4/6.
  */
-public class CreateExtends extends Thread{
+public class ThreadTest extends Thread{
+    //每个都是单独的i，无法共享
     private int i;
 
     //重写run方法
@@ -19,10 +22,11 @@ public class CreateExtends extends Thread{
             System.out.println(Thread.currentThread().getName()+" "+i);
 
             if (i==20){
-                new CreateExtends().start();
-                new CreateExtends().start();
+                new ThreadTest().start();
+                new ThreadTest().start();
             }
         }
+        ReentrantLock look= new ReentrantLock();
     }
 
 

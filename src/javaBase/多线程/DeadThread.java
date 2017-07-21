@@ -1,4 +1,4 @@
-package javaBase.thread;
+package javaBase.多线程;
 
 /**
  * Created by ghb on 2017/2/15.

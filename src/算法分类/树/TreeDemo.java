@@ -376,7 +376,7 @@ public class TreeDemo {
             return;
         }
 
-        Stack<TreeNode> s = new Stack<TreeNode>();
+        Stack<TreeNode> s = new Stack<>();
         s.push(root);
 
         while (!s.isEmpty()) {
