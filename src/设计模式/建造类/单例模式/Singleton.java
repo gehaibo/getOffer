@@ -9,6 +9,7 @@ public class Singleton {
     //由于是static，JVM加载时就会被创建
     private static final Singleton singleton = new Singleton();
 
+    String string;
     public static Singleton getInstance() {
         return singleton;
     }
