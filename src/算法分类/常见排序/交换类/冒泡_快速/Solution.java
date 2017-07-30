@@ -12,7 +12,7 @@ public class Solution {
         if (a == null || a.length <= 1) {
             return;
         }
-        boolean isSwap ;
+        boolean isSwap;
         //从第二个开始,共需要n-1趟
         for (int i = 1; i < a.length; i++) {
             // 每次先重置为false
@@ -38,8 +38,7 @@ public class Solution {
      * 每次相邻比较，最大的放到最终位置，依次排好n,n-1...
      */
     public static int partition(int[] a, int low, int high) {
-        if (a.length == 0)
-            return -1;
+        if (a.length == 0) return -1;
 
         int key = a[low];
         while (low < high) {//等于就停止
@@ -59,14 +58,14 @@ public class Solution {
             return;
 
         int index = partition(a, low, high);
-        quickSort(a, low, index - 1);
-        quickSort(a, index + 1, high);
+        if (index > low) quickSort(a, low, index - 1);
+        if (index < high) quickSort(a, index + 1, high);
     }
 
     public static void main(String[] args) {
         int a[] = {4, 3, 2, 1, 12, 4, 6};
-        bubbleSort(a);
-        //quickSort(a, 0, 6);
+        //sbubbleSort(a);
+        quickSort(a, 0, 6);
         for (int i = 0; i < a.length; i++) {
             System.out.print(a[i] + " ");
         }

@@ -1,7 +1,0 @@
-package javaBase.异常;
-
-/**
- * Created by Jackson on 2017/7/13.
- */
-public class ss {
-}

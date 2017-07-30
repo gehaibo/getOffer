@@ -16,10 +16,8 @@ public class Main {
      * 2.若该数下标为n/2，则该数为中位数；若下标小于n/2，则在右边寻找；若大于n/2，则在左边寻找。
      */
     public int MoreThanHalfNum_Solution(int[] array) {
-        if (array.length <= 0)
-            return 0;
-        if (array.length == 1)
-            return array[0];
+        if (array.length <= 0) return 0;
+        if (array.length == 1) return array[0];
         int middle = array.length >> 1;
         int start = 0;
         int end = array.length - 1;
@@ -33,7 +31,7 @@ public class Main {
         }
         int result = array[index];
 
-        //排除不存在出现次数超过数组长度一半的数
+        //检查是否超出一半
         int time = 0;
         for (int i = 0; i < array.length; i++) {
             if (array[i] == result)
@@ -49,7 +47,7 @@ public class Main {
     //基于快排思想的划分
     public int partition(int[] array, int start, int end) {
         //随机确定基准点
-        int keyIndex = (int) start + (int) Math.random() * (end - start);
+        int keyIndex = start + (int) Math.random() * (end - start);
         while (start < end) {
             while (start < end && array[end] >= array[keyIndex])
                 end--;
@@ -74,11 +72,13 @@ public class Main {
      * 数字赋值给num，所以遍历结束时，num中的数就是出现次数超过一半的数。
      */
     static int moreThanHalfNum(int[] number) {
-        if (number.length == 0)
-            return -1;
-        int result = number[0];//记录数字出现的次数
+        int length = number.length;
+        if (length == 0) return -1;
+        int result = number[0];
+        if (length == 1) return result;
+        //记录数字出现的次数
         int times = 1;
-        for (int i = 1; i < number.length; i++) {
+        for (int i = 1; i < length; i++) {
             if (times == 0) {
                 result = number[i];
                 times = 1;
@@ -89,6 +89,15 @@ public class Main {
             }
         }
 
-        return result;
+        int time = 0;
+        for (int i = 0; i < length; i++) {
+            if (number[i] == result)
+                time++;
+        }
+        if (time * 2 <= length) {
+            return 0;
+        } else {
+            return result;
+        }
     }
 }
