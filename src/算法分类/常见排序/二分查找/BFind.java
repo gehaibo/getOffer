@@ -7,8 +7,9 @@ public class BFind {
     public static void main(String[] args) {
         int[] array = {1, 2, 4, 6, 8, 9};
         System.out.println(binarySearch(array, 9));
-        System.out.println(bSearch(array, 0, array.length-1, 9));
+        System.out.println(bSearch(array, 0, array.length - 1, 9));
     }
+
 
     public static int binarySearch(int[] array, int target) {
         int lengh = array.length;

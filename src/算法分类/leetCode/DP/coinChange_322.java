@@ -5,29 +5,27 @@ package 算法分类.leetCode.DP;
  */
 public class coinChange_322 {
 
-    public static int search(int indx, int amount, int[] coins) {
-        if (amount <= 0) return 0;
-
-        if (amount < 0) return -1;
-
-        if (indx >= coins.length) return -1;
-
-        return Math.min(search(indx, amount - coins[indx], coins)+1, search(indx + 1, amount, coins));
-
-    }
-
-    public static int coinChange(int[] coins, int amount) {
-        int[] dp = new int[amount + 1];
-        for (int i = 1; i <= amount; i++) dp[i] = 0x7fff_ffff;
-        //Arrays.fill(dp,0x7fff_fffe);
-        for (int coin : coins)
-            for (int i = coin; i <= amount; i++)
-                dp[i] = Math.min(dp[i], dp[i - coin] + 1);
-        return dp[amount] == 0x7fff_ffff ? -1 : dp[amount];
+    public static int coinChange(int[] coins, int money) {
+        if (coins == null || coins.length == 0 || money <= 0)
+            return 0;
+        //保存面值为 i 的纸币找零所需的最小硬币数
+        int[] minNumber = new int[money + 1];
+        for (int i = 1; i <= money; i++) {
+            minNumber[i] = Integer.MAX_VALUE;
+            for (int j = 0; j < coins.length; j++) {
+                if (coins[j] <= i && minNumber[i - coins[j]] != Integer.MAX_VALUE)
+                    minNumber[i] = Integer.min(minNumber[i], 1 + minNumber[i - coins[j]]);
+            }
+        }
+        if (minNumber[money] == Integer.MAX_VALUE )
+            return -1;
+        else
+            return minNumber[money];
     }
 
     public static void main(String[] args) {
-        int[] coins={1,2,5};
-        System.out.println(coinChange(coins,11));
+        int[] coins = {2};
+        System.out.println(coinChange(coins, 27));
+
     }
 }

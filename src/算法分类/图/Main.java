@@ -10,10 +10,12 @@ public class Main {
         int label = 0;
         UndirectedGraphNode left = null;
         UndirectedGraphNode right = null;
-        ArrayList<UndirectedGraphNode> neighbors = new ArrayList<UndirectedGraphNode>();
+        ArrayList<UndirectedGraphNode> neighbors = new ArrayList<>();
 
         public UndirectedGraphNode(int label) {
             this.label = label;
         }
     }
+
+
 }

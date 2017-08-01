@@ -49,12 +49,10 @@ public class Solution {
      * 先将当前的表头节点从链表中拆出来，然后对剩余的节点进行逆序
      */
     public static ListNode reverse2(ListNode head) {
-        ListNode newNode ;
-
         if (head == null || head.next == null) return head;
 
         //将链表分为两部分，对第二部分节点逆序
-        newNode = reverse2(head.next);
+        ListNode newNode = reverse2(head.next);
 
         //将第一部分插入到第二部分后面
         head.next.next = head;
