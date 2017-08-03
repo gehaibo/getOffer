@@ -7,6 +7,7 @@ import java.util.HashMap;
  */
 public class Collection {
     public static void main(String[] args) {
-        HashMap map;
+        HashMap<Integer,Integer> map=new HashMap();
+        System.out.println(map.get(0));
     }
 }

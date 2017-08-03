@@ -24,7 +24,7 @@ import java.util.Stack;
 public class LinkedListSummary {
 
     public static void main(String[] args) {
-        Node n1 = new Node(1);
+        Node n1 = new Node(1);//头指针
         Node n2 = new Node(2);
         Node n3 = new Node(3);
         Node n4 = new Node(4);
@@ -36,13 +36,12 @@ public class LinkedListSummary {
 
         printList(n1);
 //		System.out.println(getListLength(n1));
-//		Node head = reverseList(n1);
-//		Node head = reverseListRec(n1);
-//		printList(head);
+		Node head = reverseList(n1);
+		//Node head = reverseListRec(n1);
+		printList(head);
 
-        Node x = reGetKthNode(n1, 2);
-        System.out.println(x.val);
-        reGetKthNodeRec(n1, 2);
+//
+
 
 
 //		x = getMiddleNode(head);
@@ -84,9 +83,10 @@ public class LinkedListSummary {
 
     public static void printList(Node head) {
         while (head != null) {
-            System.out.print(head.val + " ");
+            System.out.print(head.val + "—>");
             head = head.next;
         }
+        System.out.print("null");
         System.out.println();
     }
 
@@ -117,24 +117,26 @@ public class LinkedListSummary {
             return head;
         }
 
-        Node reHead = null;        // 反转后新链表指针
+        Node pre = null;        // 前指针
         Node cur = head;
+        // Node next=head.next;  //此时申请会很危险，可能会为空
 
         while (cur != null) {
-            Node preCur = cur;        // 用preCur保存住对要处理节点的引用
-            cur = cur.next;            // cur更新到下一个节点
-            preCur.next = reHead;    // 更新要处理节点的next引用
-            reHead = preCur;            // reHead指向要处理节点的前一个节点
-        }
+            Node next = cur.next;
 
-        return reHead;
+            cur.next = pre;   //反转指针
+            pre = cur;        //依次后移
+            cur = next;
+
+        }
+        return pre;
     }
 
     // 翻转递归（递归）
     // 递归的精髓在于你就默认reverseListRec已经成功帮你解决了子问题了！但别去想如何解决的
     // 现在只要处理当前node和子问题之间的关系。最后就能圆满解决整个问题。
     /*
-		 head
+         head
 			1 -> 2 -> 3 -> 4
 
 		  head

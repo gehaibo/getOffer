@@ -35,7 +35,7 @@ public class Test {
 
     public static void main(String[] args) throws IOException {
         String contents = new String(Files.readAllBytes(
-                Paths.get("/Users/ghb/IdeaProjects/ghb.算法分类.剑指offer/alice.txt")), StandardCharsets.UTF_8);
+                Paths.get("/Users/ghb/IdeaProjects/ghb.刷题归类.剑指offer/alice.txt")), StandardCharsets.UTF_8);
         List<String> wordList = Arrays.asList(contents.split("[\\P{L}]+"));
         Stream<String> words = wordList.stream();
         Stream<String> longWords = words.filter(w -> w.length() > 12);
