@@ -29,27 +29,33 @@ public class 数组30最小的K个数 {
     }
 
     public static ArrayList<Integer> GetLeastNumbers_Solution(int[] input, int k) {
-        int length = input.length;
         ArrayList<Integer> result = new ArrayList<>();
+        int length = input.length;
         if (length == 0 || (length > 0 && length < k)) return result;
 
-        int index = partition(input, 0, length - 1);
-        while (index != k - 1) {
-            if (index < k) {
-                index = partition(input, index + 1, length - 1);
+        int l = 0;
+        int r = length - 1;
+        while (l < r) {
+            int p = partition(input, l, r);
+            if (p - l > k) {//p-l是相对位置
+                r = k - 1;
+            } else if (p - l < k) {
+                l = p + 1;
             } else {
-                index = partition(input, 0, index - 1);
+                break;
             }
+
         }
         for (int i = 0; i < k; i++) {
             result.add(input[i]);
         }
+
         return result;
     }
 
     public static void main(String[] args) {
         int[] a = {4, 5, 1, 6, 2, 7, 3, 8};
-        ArrayList<Integer> result = GetLeastNumbers_Solution(a, 8);
+        ArrayList<Integer> result = GetLeastNumbers_Solution(a, 4);
         System.out.println(result.toString());
     }
 

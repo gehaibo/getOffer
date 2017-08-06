@@ -1,7 +1,5 @@
 package atest;
 
-import java.util.Random;
-
 /**
  * Created by Jackson on 2017/5/19.
  */
@@ -21,12 +19,16 @@ public class Main {
 //            }
 //            System.out.println(a[n-1]);
 //        }
-        int l = 1, r = 10;
-        Random random = new Random();
-        int random_index = random.nextInt(r - l + 1) + l;
-
-        int s = new Random().nextInt(r - l + 1) + l;
-        System.out.println(s);
-        System.out.println(random_index);
+//        int l = 1, r = 10;
+//        Random random = new Random();
+//        int random_index = random.nextInt(r - l + 1) + l;
+//
+//        int s = new Random().nextInt(r - l + 1) + l;
+//        System.out.println(s);
+//        System.out.println(random_index);
+        String[] a=new String[3];
+        for (int i = 0; i < a.length; i++) {
+            System.out.println(a[i]);
+        }
     }
 }

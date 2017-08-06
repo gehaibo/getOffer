@@ -8,22 +8,38 @@ package 刷题归类.剑指offer.面试题09.斐波那契数列系列问题.青�
  * n=1时只能跳一阶，n=2时，可以跳1，可以直接跳二;
  */
 public class Main {
-    public int JumpFloor1(int target) {
+    public static int JumpFloor1(int target) {
         if (target <= 2) return target;
         return JumpFloor1(target - 1) + JumpFloor1(target - 2);
     }
 
-    public int JumpFloor2(int target){
+    public static int JumpFloor2(int target) {
         if (target <= 2) return target;
 
         int f1 = 1;
         int f2 = 2;
-        int f=0;
+        int f = 0;
         for (int i = 3; i <= target; ++i) {
-            f=f1+f2;
-            f1=f2;
-            f2=f;
+            f = f1 + f2;
+            f1 = f2;
+            f2 = f;
         }
         return f;
+    }
+
+    //DP
+    public static int JumpFloor3(int target) {
+        int[] dp = new int[target + 1];
+        dp[0] = 0;
+        dp[1] = 1;
+        for (int i = 2; i <= target; i++) {
+            dp[i] = dp[i - 1] + dp[i - 2];
+        }
+        return dp[target];
+    }
+
+    public static void main(String[] args) {
+        System.out.println(JumpFloor2(5));
+        System.out.println(JumpFloor1(5));
     }
 }

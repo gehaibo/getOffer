@@ -9,23 +9,24 @@ public class 归并排序 {
      * 稳定排序
      * 全是nlog2n，空间复杂度1
      */
-    public static void mergeSort(int[] a, int left, int right) {
-        // if (left < right) {
-        if (left >= right) return;
-        int middle = (left + right) / 2;
-        // 对左边进行递归
-        mergeSort(a, left, middle);
-        // 对右边进行递归
-        mergeSort(a, middle + 1, right);
+    public static void mergeSort(int[] a, int l, int r) {
+
+        if (l >= r) return;
+        int mid = l + (r - l) / 2;
+        // 对左边和进行归并
+        mergeSort(a, l, mid);
+        mergeSort(a, mid + 1, r);
+
         // 合并
-        merge(a, left, middle, right);
-        // }
+        merge(a, l, mid, r);
+
     }
 
     //合并两部分
     private static void merge(int[] a, int left, int middle, int right) {
+        //辅助空间，两个归并的空间依次复制到这里
         int[] tmpArr = new int[right - left + 1];
-        int pos = 0;
+        int pos = 0;//要插入位置
 
         int i = left;// 左边起始位置
         int j = middle + 1; // 右边起始位置
@@ -38,10 +39,10 @@ public class 归并排序 {
             }
         }
         // 将剩余的部分放入中间数组
-        while (i <= middle) {
+        while (i <= middle) {//i未归并完
             tmpArr[pos++] = a[i++];
         }
-        while (j <= right) {
+        while (j <= right) {//j未归并完
             tmpArr[pos++] = a[j++];
         }
         // 将中间数组复制回原数组
@@ -50,6 +51,7 @@ public class 归并排序 {
             a[left++] = tmpArr[start++];
         }
     }
+
 
     public static void main(String[] args) {
         int a[] = {4, 3, 2, 1, 12, 4, 6};

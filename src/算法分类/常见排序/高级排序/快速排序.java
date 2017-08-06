@@ -17,16 +17,11 @@ public class 快速排序 {
 
     /**
      * 优化放置重复
-     *
-     * @param arr
-     * @param l
-     * @param r
-     * @return
      */
-    private static int partion(int[] arr, int l, int r) {
+     public static int partion(int[] arr, int l, int r) {
         int s = new Random().nextInt(r - l + 1) + l;
         swap(arr, l, s);
-        int v = arr[l];
+        int v = arr[l];//第一个记录要分界的元素大小
 
         int i = l + 1, j = r;
         while (true) {
