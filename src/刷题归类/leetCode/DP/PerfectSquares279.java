@@ -6,7 +6,7 @@ import java.util.Arrays;
  * 如果一个数x可以表示为一个任意数a加上一个平方数bｘb，也就是x = a + bｘb，
  * 那么能组成这个数x最少的平方数个数，就是能组成a最少的平方数个数加上1（因为b*b已经是平方数了或者本身）。
  * nums[a + b*b] = min(nums[a] + 1, nums[a + b*b]);
- *
+ * <p>
  * 还可以用数学方法
  */
 public class PerfectSquares279 {

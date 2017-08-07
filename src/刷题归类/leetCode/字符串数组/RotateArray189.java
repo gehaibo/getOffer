@@ -3,7 +3,7 @@ package 刷题归类.leetCode.字符串数组;
 /**
  * Created by Jackson on 2017/7/27.
  */
-public class RotateArray_189 {
+public class RotateArray189 {
     public void rotate(int[] nums, int k) {
         int length=nums.length;
         if (k > length)

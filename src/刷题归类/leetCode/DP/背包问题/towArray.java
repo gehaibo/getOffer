@@ -1,4 +1,4 @@
-package 算法分类.经典.背包问题;
+package 刷题归类.leetCode.DP.背包问题;
 
 /**
  * Created by ghb on 2017/3/21.

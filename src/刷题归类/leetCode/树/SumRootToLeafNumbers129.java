@@ -13,7 +13,7 @@ package 刷题归类.leetCode.树;
  * The root-to-leaf path1->3represents the number13.
  * Return the sum = 12 + 13 =25.
  */
-public class sum_root_to_leaf_numbers {
+public class SumRootToLeafNumbers129 {
     public class TreeNode {
         int val;
         TreeNode left;

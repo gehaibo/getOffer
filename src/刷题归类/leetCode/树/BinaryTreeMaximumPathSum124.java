@@ -3,7 +3,7 @@ package 刷题归类.leetCode.树;
 /**
  * Created by Jackson on 2017/5/16.
  */
-public class Binary_tree_maximum_path_sum_124 {
+public class BinaryTreeMaximumPathSum124 {
     int maxSum = Integer.MIN_VALUE;
 
     public int maxPathSum(TreeNode root) {

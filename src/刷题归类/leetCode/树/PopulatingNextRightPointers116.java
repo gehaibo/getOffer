@@ -16,7 +16,7 @@ class TreeLinkNode {
  * 思路：初始化next都为空，所以最右边的不用处理，next默认为null
  * 要利用上层初始化的next，cur.next即是cur的兄弟节点
  */
-public class Populating_next_Right_Pointers_116 {
+public class PopulatingNextRightPointers116 {
 
     public void connect(TreeLinkNode root) {
         TreeLinkNode start = root;//控制每层的开始加点
