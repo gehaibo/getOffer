@@ -1,7 +1,7 @@
 package 算法分类.常见排序.普通排序;
 
 /**
- * Created by Jackson on 2017/8/3.
+ * 每一趟从待排序的数据元素中选择最小（或最大）的一个元素作为首元素，直到所有元素排完为止，简单选择排序是不稳定排序
  */
 public class 选择排序 {
     /**
@@ -13,7 +13,7 @@ public class 选择排序 {
     public static void selectionSort(int[] a) {
         //记录每次要找的最小的位置
         int length = a.length;
-        for (int i = 0; i < length; i++) {
+        for (int i = 0; i < length - 1; i++) {//最后一个肯定是最大
 
             int minIdx = i;//记录最小值
 

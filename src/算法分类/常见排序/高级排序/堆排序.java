@@ -10,7 +10,7 @@ public class 堆排序 {
     /**
      * 2.堆排序
      * 不稳定排序
-     * 全是nlog2n，空间复杂度1
+     * 全是nlogn，空间复杂度1
      */
     public static void heapSort(int[] a) {
         int lastIndex = a.length - 1;
@@ -62,7 +62,7 @@ public class 堆排序 {
     public static void main(String[] args) {
         int a[] = {4, 3, 2, 1, 12, 4, 6};
 
-        //heapSort(a);
+        heapSort(a);
         for (int i = 0; i < a.length; i++) {
             System.out.print(a[i] + " ");
         }

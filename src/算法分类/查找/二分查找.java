@@ -4,6 +4,7 @@ package 算法分类.查找;
  * Created by Jackson on 2017/7/30.
  */
 public class 二分查找 {
+
     public static void main(String[] args) {
         int[] array = {1, 2, 4, 6, 8, 9};
         System.out.println(binarySearch(array, 9));
@@ -40,5 +41,9 @@ public class 二分查找 {
             return bSearch(a, mid + 1, high, target);
         return mid;
     }
+
+    /**
+     * 二分搜索数可能会退化成n，只有右孩子，或只有左孩子
+     */
 
 }
