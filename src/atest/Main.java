@@ -10,6 +10,8 @@ public class Main {
     }
 
     public static void main(String[] args) {
+        String a;
+        System.out.println();
 //        Scanner in = new Scanner(System.in);
 //        while (in.hasNextInt()) {//注意while处理多个case
 //            int n = in.nextInt();
@@ -26,9 +28,9 @@ public class Main {
 //        int s = new Random().nextInt(r - l + 1) + l;
 //        System.out.println(s);
 //        System.out.println(random_index);
-        String[] a=new String[3];
-        for (int i = 0; i < a.length; i++) {
-            System.out.println(a[i]);
-        }
+//        String[] a=new String[3];
+//        for (int i = 0; i < a.length; i++) {
+//            System.out.println(a[i]);
+//        }
     }
 }
