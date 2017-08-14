@@ -4,7 +4,7 @@ package 刷题归类.剑指offer;
  * 题目：输入两个单调递增的链表，输出两个链表合成后的链表，当然我们需要合成后的链表满足单调不减规则。
  */
 public class 链表17合并两个排序的链表 {
-    //递归求解
+    //递归求解，超时
     public ListNode Merge(ListNode list1, ListNode list2) {
         if (list1 == null) return list2;
         if (list2 == null) return list1;

@@ -256,7 +256,7 @@ public class LinkedListSummary {
      * 。时间复杂度为O（n）
      */
     public static void reversePrintListStack(Node head) {
-        Stack<Node> s = new Stack<Node>();
+        Stack<Node> s = new Stack<>();
         Node cur = head;
         while (cur != null) {
             s.push(cur);
@@ -286,7 +286,7 @@ public class LinkedListSummary {
      * 已知两个单链表pHead1 和pHead2 各自有序，把它们合并成一个链表依然有序
      * 这个类似归并排序。尤其注意两个链表都为空，和其中一个为空时的情况。只需要O（1）的空间。时间复杂度为O（max(len1, len2)）
      */
-    public static Node mergeSortedList(Node head1, Node head2) {
+    public static Node mergeSortedList(Node head1, Node head2) {//减剑指offer17
         // 其中一个链表为空的情况，直接返回另一个链表头，O(1)
         if (head1 == null) {
             return head2;

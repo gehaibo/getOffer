@@ -11,6 +11,7 @@ import java.util.HashSet;
  * <p>
  * 固定第一个字符，递归取得首位后面的各种字符串组合；
  * 再把第一个字符与后面每一个字符交换，并同样递归获得首位后面的字符串组合；
+ * <p>
  * 递归的出口，就是只剩一个字符的时候，递归的循环过程，就是从每个子串的第二
  * 个字符开始依次与第一个字符交换，然后继续处理子串。
  */
@@ -30,49 +31,18 @@ public class 字符串28字符串的排列和组合 {
      * 面试题28：
      */
     private static void permutation(char[] str, int begin) {
-
+        //到最后一位
         if (begin == str.length) {
             System.out.println(str);
         } else {
             for (int i = begin; i < str.length; i++) {
                 //找出所有可以出现在首位的字符
-                char temp = str[begin];
-                str[begin] = str[i];
-                str[i] = temp;
-
+                swap(str, begin, i);
                 //递归的求出后半部分的全排列
                 permutation(str, begin + 1);
-
                 //恢复数组
-                temp = str[begin];
-                str[begin] = str[i];
-                str[i] = temp;
-
+                swap(str, begin, i);
             }
-        }
-    }
-
-    public static ArrayList<String> Permutation(String str) {
-        ArrayList<String> result = new ArrayList<>();
-        if (str == null || str.length() == 0)
-            return result;
-        HashSet<String> set = new HashSet<>();//使用HashSet不需要考虑去重
-        fun(set, str.toCharArray(), 0);
-        result.addAll(set);
-        Collections.sort(result);
-        return result;
-    }
-
-    public static void fun(HashSet<String> set, char[] str, int index) {
-        if (index == str.length) {
-            set.add(new String(str));
-            return;
-        }
-        //index为当前固定位
-        for (int i = index; i < str.length; i++) {
-            swap(str, i, index);
-            fun(set, str, index + 1);
-            swap(str, i, index);//复位
         }
     }
 
@@ -84,19 +54,52 @@ public class 字符串28字符串的排列和组合 {
         }
     }
 
+    //static HashSet<String> set = new HashSet<>();//使用HashSet不需要考虑去重
+    public static ArrayList<String> Permutation(String str) {
+        ArrayList<String> result = new ArrayList<>();
+        HashSet<String> set = new HashSet<>();
+        if (str == null || str.length() == 0)
+            return result;
+
+        fun(set, str.toCharArray(), 0);
+        result.addAll(set);
+        Collections.sort(result);
+        return result;
+    }
+
+    public static void fun(HashSet<String> set, char[] str, int index) {
+        if (index == str.length - 1) {
+            set.add(String.valueOf(str));
+            return;
+        }
+        //index为当前固定位
+        for (int i = index; i < str.length; i++) {
+            swap(str, i, index);
+            fun(set, str, index + 1);
+            swap(str, i, index);//复位
+        }
+    }
+
+
     public static void main(String[] args) {
 //        ArrayList<String> result=Permutation("abc");
 //        System.out.println(result.toString());
-        Combination();
-        Combination();
+//        char[] chars = {'a', 'b', 'c'};
+//       // permutation(chars);
+        ArrayList<String> res=Permutation("aa");
+        for (String string: res) {
+            System.out.println(string);
+        }
+        //Permutation("abc");
     }
 
     public static void Combination() {
         /*基本思路：求全组合，则假设原有元素n个，则最终组合结果是2^n个。原因是：
-         * 用位操作方法：假设元素原本有：a,b,c三个，则1表示取该元素，0表示不取。故去a则是001，取ab则是011.
+         * 用位操作方法：假设元素原本有：a,b,c三个，则1表示取该元素，0表示不取。故取a则是001，取ab则是011.
          * 所以一共三位，每个位上有两个选择0,1.所以是2^n个结果。
          * 这些结果的位图值都是0,1,2....2^n。所以可以类似全真表一样，从值0到值2^n依次输出结果：即：
          * 000,001,010,011,100,101,110,111 。对应输出组合结果为：
+         * 0,1,2,3,4,5,6,7
         空,a, b ,ab,c,ac,bc,abc.
         这个输出顺序刚好跟数字0~2^n结果递增顺序一样
         取法的二进制数其实就是从0到2^n-1的十进制数

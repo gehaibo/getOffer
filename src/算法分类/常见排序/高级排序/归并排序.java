@@ -30,22 +30,22 @@ public class 归并排序 {
         int[] tmpArr = new int[right - left + 1];
         int pos = 0;//要插入位置
 
-        int i = left;// 左边起始位置
-        int j = middle + 1; // 右边起始位置
-        while (i <= middle && j <= right) {
+        int l = left;// 左边起始位置
+        int r = middle + 1; // 右边起始位置
+        while (l <= middle && r <= right) {
             // 从两个数组中选取较小的数放入中间数组
-            if (a[i] <= a[j]) {
-                tmpArr[pos++] = a[i++];
+            if (a[l] <= a[r]) {
+                tmpArr[pos++] = a[l++];
             } else {
-                tmpArr[pos++] = a[j++];
+                tmpArr[pos++] = a[r++];
             }
         }
         // 将剩余的部分放入中间数组
-        while (i <= middle) {//i未归并完
-            tmpArr[pos++] = a[i++];
+        while (l <= middle) {//i未归并完
+            tmpArr[pos++] = a[l++];
         }
-        while (j <= right) {//j未归并完
-            tmpArr[pos++] = a[j++];
+        while (r <= right) {//j未归并完
+            tmpArr[pos++] = a[r++];
         }
         // 将中间数组复制回原数组
         int start = 0;
