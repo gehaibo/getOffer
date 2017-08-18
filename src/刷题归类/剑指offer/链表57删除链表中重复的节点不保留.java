@@ -1,6 +1,8 @@
 package 刷题归类.剑指offer;
 
 
+import 刷题归类.ListNode;
+
 /**
  * Created by ghb on 2017/4/10.
  */

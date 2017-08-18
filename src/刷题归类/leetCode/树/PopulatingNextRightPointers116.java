@@ -3,14 +3,9 @@ package 刷题归类.leetCode.树;
 /**
  * Created by Jackson on 2017/5/16.
  */
-class TreeLinkNode {
-    int val;
-    TreeLinkNode left, right, next;
 
-    TreeLinkNode(int x) {
-        val = x;
-    }
-}
+
+import 刷题归类.TreeLinkNode;
 
 /**
  * 思路：初始化next都为空，所以最右边的不用处理，next默认为null

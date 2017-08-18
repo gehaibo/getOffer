@@ -1,5 +1,7 @@
 package 刷题归类.剑指offer;
 
+import 刷题归类.ListNode;
+
 /**
  * 链表中环的入口节点
  * 思路：

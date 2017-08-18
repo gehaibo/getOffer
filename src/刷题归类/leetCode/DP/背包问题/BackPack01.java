@@ -3,7 +3,7 @@ package 刷题归类.leetCode.DP.背包问题;
 /**
  * Created by ghb on 2017/3/20.
  */
-public class BackPack {
+public class BackPack01 {
     /**
      *  0-1背包问题,物品有0到n个不重复
      *  状态转移方程：

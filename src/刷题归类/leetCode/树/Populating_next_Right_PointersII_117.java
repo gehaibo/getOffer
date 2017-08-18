@@ -1,5 +1,7 @@
 package 刷题归类.leetCode.树;
 
+import 刷题归类.TreeLinkNode;
+
 /**
  * Created by Jackson on 2017/5/17.
  */

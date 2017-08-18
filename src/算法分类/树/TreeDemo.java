@@ -283,7 +283,7 @@ public class TreeDemo {
             return 0;
         }
 
-        Queue<TreeNode> q = new LinkedList<TreeNode>();
+        Queue<TreeNode> q = new LinkedList<>();
         q.offer(root);
 
         int cnt = 0;
@@ -329,7 +329,7 @@ public class TreeDemo {
         }
 
         TreeNode dummy = new TreeNode(0);
-        Queue<TreeNode> q = new LinkedList<TreeNode>();
+        Queue<TreeNode> q = new LinkedList<>();
         q.offer(root);
         q.offer(dummy);
 
@@ -419,11 +419,11 @@ public class TreeDemo {
             return;
         }
 
-        Stack<TreeNode> s = new Stack<TreeNode>();
+        Stack<TreeNode> s = new Stack<>();
 
         TreeNode cur = root;
 
-        while (!s.empty() || cur!=null) {
+        while (!s.empty() || cur != null) {
             //一直遍历到左子树最下边，边遍历边保存根节点到栈中
             while (cur != null) {
                 s.push(cur);
@@ -478,8 +478,8 @@ public class TreeDemo {
             return;
         }
 
-        Stack<TreeNode> s = new Stack<TreeNode>();
-        Stack<TreeNode> out = new Stack<TreeNode>();
+        Stack<TreeNode> s = new Stack<>();
+        Stack<TreeNode> out = new Stack<>();
 
         s.push(root);
         while (!s.isEmpty()) {

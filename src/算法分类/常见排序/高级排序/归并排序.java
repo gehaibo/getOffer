@@ -34,11 +34,10 @@ public class 归并排序 {
         int r = middle + 1; // 右边起始位置
         while (l <= middle && r <= right) {
             // 从两个数组中选取较小的数放入中间数组
-            if (a[l] <= a[r]) {
+            if (a[l] <= a[r])
                 tmpArr[pos++] = a[l++];
-            } else {
+            else
                 tmpArr[pos++] = a[r++];
-            }
         }
         // 将剩余的部分放入中间数组
         while (l <= middle) {//i未归并完

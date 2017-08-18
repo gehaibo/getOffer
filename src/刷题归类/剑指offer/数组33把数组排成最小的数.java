@@ -18,7 +18,7 @@ import java.util.Comparator;
  * ab < ba 则 a < b
  * ab = ba 则 a = b
  **/
-public class 面试题33把数组排成最小的数 {
+public class 数组33把数组排成最小的数 {
     public String PrintMinNumber(int[] numbers) {
         if (numbers == null || numbers.length == 0)
             return "";

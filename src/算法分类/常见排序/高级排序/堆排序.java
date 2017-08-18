@@ -1,10 +1,13 @@
 package 算法分类.常见排序.高级排序;
 
+import java.util.Arrays;
+
 /**
- * Created by ghb on 2017/4/10.
+ * 序号为 p 的两个孩子为 2p 与 2p+1，
+ * 1.先 n/2 轮次（从最底端非叶子节点开始）建堆
+ * 然后每次取堆顶，后调整堆，最终完成有序排序
  */
 public class 堆排序 {
-
 
 
     /**
@@ -12,60 +15,39 @@ public class 堆排序 {
      * 不稳定排序
      * 全是nlogn，空间复杂度1
      */
+    /**
+     * 构建大顶堆
+     */
+    public static void adjustHeap(int[] a, int i, int len) {
+        int temp, j;
+        temp = a[i];
+        for (j = 2 * i + 1; j < len; j = 2 * j + 1) {// 沿关键字较大的孩子结点向下筛选
+            if (j < len && a[j] < a[j + 1])
+                ++j; // j为关键字中较大记录的下标
+            if (temp >= a[j])
+                break;
+            a[i] = a[j];
+            i = j;
+        }
+        a[i] = temp;
+    }
+
     public static void heapSort(int[] a) {
-        int lastIndex = a.length - 1;
-        for (int i = 0; i < lastIndex; i++) {
-            // 建堆
-            buildMaxHeap(a, lastIndex - i);
-            // 交换堆顶和最后一个元素
-            swap(a, 0, lastIndex - i);
-            // System.out.println(Arrays.toString(a));
+        int i, len = a.length;
+        for (i = len / 2 - 1; i >= 0; i--) {// 构建一个大顶堆
+            adjustHeap(a, i, len - 1);
         }
-    }
-
-    private static void buildMaxHeap(int[] data, int lastIndex) {
-        // 从lastIndex处节点（最后一个节点）的父节点开始
-        for (int i = (lastIndex - 1) / 2; i >= 0; i--) {
-            // k保存正在判断的节点
-            int k = i;
-            // 如果当前k节点的子节点存在
-            while (k * 2 + 1 <= lastIndex) {
-                // k节点的左子节点的索引
-                int biggerIndex = 2 * k + 1;
-                // 如果biggerIndex小于lastIndex，即biggerIndex+1代表的k节点的右子节点存在
-                if (biggerIndex < lastIndex) {
-                    // 若果右子节点的值较大
-                    if (data[biggerIndex] < data[biggerIndex + 1]) {
-                        // biggerIndex总是记录较大子节点的索引
-                        biggerIndex++;
-                    }
-                }
-                // 如果k节点的值小于其较大的子节点的值
-                if (data[k] < data[biggerIndex]) {
-                    // 交换他们
-                    swap(data, k, biggerIndex);
-                    // 将biggerIndex赋予k，开始while循环的下一次循环，重新保证k节点的值大于其左右子节点的值
-                    k = biggerIndex;
-                } else {
-                    break;
-                }
-            }
+        for (i = len - 1; i >= 0; i--) {// 将堆顶记录和当前未经排序子序列的最后一个记录交换
+            int temp = a[0];
+            a[0] = a[i];
+            a[i] = temp;
+            adjustHeap(a, 0, i - 1);// 将a中前i-1个记录重新调整为大顶堆
         }
-    }
-
-    private static void swap(int[] data, int i, int j) {
-        int tmp = data[i];
-        data[i] = data[j];
-        data[j] = tmp;
     }
 
     public static void main(String[] args) {
-        int a[] = {4, 3, 2, 1, 12, 4, 6};
-
+        int a[] = {9, 8, 7, 6, 5, 4, 3, 2, 1, 0, -1, -2, -3};
         heapSort(a);
-        for (int i = 0; i < a.length; i++) {
-            System.out.print(a[i] + " ");
-        }
-
+        System.out.println(Arrays.toString(a));
     }
 }

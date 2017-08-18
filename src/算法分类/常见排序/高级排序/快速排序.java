@@ -1,5 +1,6 @@
 package 算法分类.常见排序.高级排序;
 
+import java.util.Arrays;
 import java.util.Random;
 
 /**
@@ -54,8 +55,6 @@ public class 快速排序 {
 
         int[] data = new int[]{4, 5, 4, 2, 6, 1, 0, 8};
         quickSort(data, 0, data.length - 1);
-        for (int n : data) {
-            System.out.print(n + " ");
-        }
+        System.out.println(Arrays.toString(data));
     }
 }

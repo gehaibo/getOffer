@@ -1,5 +1,7 @@
 package 刷题归类.剑指offer;
 
+import 刷题归类.TreeNode;
+
 /**
  * 序列化采用先序
  */

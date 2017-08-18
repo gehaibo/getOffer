@@ -20,7 +20,7 @@ public class 希尔排序 {
                 //下面就是插入排序，从下一个开始，间隔是d
                 for (int j = i + d; j < a.length; j = j + d) {
                     int temp = a[j];
-                    int pos = j - d;
+                    int pos = j - d;//前一个，要减去分量
                     while (pos >= 0 && a[pos] > temp) {
                         a[pos + d] = a[pos];
                         pos -= d;

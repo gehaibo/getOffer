@@ -1,5 +1,7 @@
 package 刷题归类.剑指offer;
 
+import 刷题归类.ListNode;
+
 /**
  * 题目：输入一个链表，输出该链表中倒数第k个结点。
  * <p>
