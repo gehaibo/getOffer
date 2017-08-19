@@ -1,5 +1,7 @@
 package 算法分类.常见排序.普通排序;
 
+import java.util.Arrays;
+
 /**
  * 冒泡排序是一种交换排序，它的基本思想是：两两比较序列中相邻记录的关键字，如果反序则交换，直到没有反序的记录为止。它的运行过程如下（以升序排序为例）：
  * <p>
@@ -46,14 +48,14 @@ public class 冒泡排序 {
      * 那么在第一趟遍历后，最后发生交换的位置必定小于10，且这个位置之后的数据必定已经有序了，记录下这位置，第二次只要从数组头部遍历到这个位置就可以了。
      */
     static void BubbleSort3(int a[], int n) {
-        int j, k;
+        int k;
         int flag;
 
         flag = n;
         while (flag > 0) {
             k = flag;//k记录每次需要循环的
             flag = 0;
-            for (j = 1; j < k; j++)
+            for (int j = 1; j < k; j++)
                 if (a[j - 1] > a[j]) {
                     int temp = a[j - 1];
                     a[j - 1] = a[j];
@@ -67,9 +69,7 @@ public class 冒泡排序 {
         int a[] = {4, 3, 2, 1, 12, 4, 6};
         //bubbleSort(a);
         BubbleSort3(a, 7);
-        for (int i = 0; i < a.length; i++) {
-            System.out.print(a[i] + " ");
-        }
+        System.out.println(Arrays.toString(a));
 
     }
 }

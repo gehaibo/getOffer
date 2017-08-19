@@ -34,7 +34,7 @@ public class LongestPalindromicSubstring5 {
      * 就是要注意奇偶情况，由于回文串的长度可奇可偶，比如”bob”是奇数形式的回文，”noon”就是偶数形式的回文，两种形式的回文都要搜索
      */
 
-    private int lo, maxLen;
+    private int lo, maxLen;//lo起始，maxLen结束
 
     public String longestPalindrome2(String s) {
         int len = s.length();
