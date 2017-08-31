@@ -1,86 +1,96 @@
 package 刷题归类.leetCode.字符串数组;
 
-import java.util.HashSet;
-import java.util.LinkedList;
-import java.util.Queue;
+import java.util.*;
 
 /**
- * Created by Jackson on 2017/7/29.
+ * Given two words (beginWord and endWord), and a dictionary's word list, find the length of shortest transformation sequence from beginWord to endWord, such that:
+ * <p>
+ * Only one letter can be changed at a time.
+ * Each transformed word must exist in the word list. Note that beginWord is not a transformed word.
+ * For example,
+ * <p>
+ * Given:
+ * beginWord = "hit"
+ * endWord = "cog"
+ * wordList = ["hot","dot","dog","lot","log","cog"]
+ * As one shortest transformation is "hit" -> "hot" -> "dot" -> "dog" -> "cog",
  */
 public class WordLadder_127 {
-    public int ladderLength(String start, String end, HashSet<String> dict) {
-        if(start==null || end==null || start.length()==0 || end.length()==0 || start.length()!=end.length())
-            return 0;
-        LinkedList<String> queue = new LinkedList<>();
-        HashSet<String> visited = new HashSet<>();
-        int level= 1;
-        int lastNum = 1;
-        int curNum = 0;
-        queue.offer(start);
-        visited.add(start);
-        while(!queue.isEmpty())
-        {
-            String cur = queue.poll();
-            lastNum--;
-            for(int i=0;i<cur.length();i++)
-            {
-                char[] charCur = cur.toCharArray();
-                for(char c='a';c<='z';c++)
-                {
-                    charCur[i] = c;
-                    String temp = new String(charCur);
-                    if(temp.equals(end))
-                        return level+1;
-                    if(dict.contains(temp) && !visited.contains(temp))
-                    {
-                        curNum++;
-                        queue.offer(temp);
-                        visited.add(temp);
-                    }
-                }
-            }
-            if(lastNum==0)
-            {
-                lastNum = curNum;
-                curNum = 0;
-                level++;
-            }
-        }
-        return 0;
-    }
+    public static int ladderLength(String b, String e, List<String> wordList) {
+        if (b.equals(e)) return 1;
+        Set<String> dict = new HashSet<>(wordList);
+        if (!dict.contains(e)) return 0;
+        Queue<String> q = new LinkedList<>();
+        q.add(b);
+        dict.remove(b);
 
+        int level = 2;
 
-        public int ladderLength2(String beginWord, String endWord, HashSet<String> dict) {
-            Queue<String> queue = new LinkedList<>();
-            // step用来记录跳数
-            int step = 2;
-            queue.offer(beginWord);
-            while(!queue.isEmpty()){
-                int size = queue.size();
-                // 控制size来确保一次while循环只计算同一层的节点，有点像二叉树level order遍历
-                for(int j = 0; j < size; j++){
-                    String currWord = queue.poll();
-                    // 循环这个词从第一位字母到最后一位字母
-                    for(int i = 0; i < endWord.length(); i++){
-                        // 循环这一位被替换成25个其他字母的情况
-                        for(char letter = 'a'; letter <= 'z'; letter++){
-                            StringBuilder newWord = new StringBuilder(currWord);
-                            newWord.setCharAt(i, letter);
-                            if(endWord.equals(newWord.toString())){
-                                return step;
-                            } else if(dict.contains(newWord.toString())){
-                                dict.remove(newWord.toString());
-                                queue.offer(newWord.toString());
-                            }
+        while (!q.isEmpty()) {
+            int sz = q.size();
+
+            for (int i = 0; i < sz; i++) {
+                String tmp = q.poll();
+
+                for (int j = 0; j < tmp.length(); j++) {
+                    char[] chars = tmp.toCharArray();
+
+                    for (char c = 'a'; c <= 'z'; c++) {
+                        chars[j] = c;
+                        String tmp2 = new String(chars);
+
+                        if (tmp2.equals(e)) return level;
+
+                        if (dict.remove(tmp2)) {
+                            q.add(tmp2);
                         }
                     }
                 }
-                step++;
             }
-            return 0;
+
+            level++;
         }
 
+        return 0;
+    }
+
+//    public static int ladderLength(String start, String end, List<String> wordList) {
+//        Set<String> dict = new HashSet<>(wordList);
+//        dict.remove(start);
+//        if (!dict.contains(end)) return 0;
+//        HashMap<String, Integer> disMap = new HashMap<>();
+//        LinkedList<String> queue = new LinkedList<>();
+//        queue.add(start);
+//        disMap.put(start, 1);
+//        while (!queue.isEmpty()) {
+//            String word = queue.poll();
+//            for (int i = 0; i < word.length(); i++) {
+//                for (char ch = 'a'; ch <= 'z'; ch++) {
+//                    StringBuilder sb = new StringBuilder(word);
+//                    sb.setCharAt(i, ch);
+//                    String nextWord = sb.toString();
+//                    if (end.equals(nextWord))
+//                        return disMap.get(word) + 1;
+//                    if (dict.contains(nextWord) && !disMap.containsKey(nextWord)) {
+//                        disMap.put(nextWord, disMap.get(word) + 1);
+//                        queue.add(nextWord);
+//                    }
+//                }
+//            }
+//        }
+//        return 0;
+//    }
+
     public static void main(String[] args) {
-        System.out.println();
+        String start = "hit";
+        String end = "cog";
+        List<String> list = new ArrayList<>();//"hot","dot","dog","lot","log"
+        list.add("hot");
+        list.add("dot");
+        list.add("dog");
+        list.add("lot");
+        list.add("log");
+       // list.add("cog");
+        System.out.println(ladderLength(start, end, list));
     }
 }

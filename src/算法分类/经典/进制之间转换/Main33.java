@@ -4,7 +4,21 @@ import java.math.BigInteger;
 import java.util.Scanner;
 
 /**
- * Created by Jackson on 2017/6/23.
+ * 将一个处于Integer类型取值范围内的整数从指定源进制转换为指定目标进制；
+ 可指定的进制值范围为[2,62]； 每个数字位的可取值范围为[0-9a-zA-Z]；
+ 输出字符串的每一个都须为有效值；反例："012"的百位字符即为无效值。 实现时无需考虑非法输入。
+ 输入描述:
+ 输入为：
+ 源进制 目标进制 待转换的整数值
+
+ 例子：8 16 12345670
+ 输出描述:
+ 整数转换为目标进制后得到的值
+ 示例1
+ 输入
+ 8 16 12345670
+ 输出
+ 29cbb8
  */
 public class Main33 {
 
@@ -55,7 +69,7 @@ public class Main33 {
         int from = sc.nextInt();
         int to = sc.nextInt();
         String num = sc.next();
-        System.out.println("way1" + radixConvert2(radixConvert(from, num), to));
+        System.out.println(radixConvert2(radixConvert(from, num), to));
 
     }
 

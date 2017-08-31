@@ -33,6 +33,7 @@ public class 树18树的子结构 {
         return result;
     }
 
+    //判断子树是否相等
     boolean doesHave(TreeNode root1, TreeNode root2) {
         //如果Tree2已经遍历完了都能对应的上，返回true
         if (root2 == null) return true;

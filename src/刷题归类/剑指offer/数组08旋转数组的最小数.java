@@ -23,5 +23,24 @@ public class 数组08旋转数组的最小数 {
         }
         return array[0];//循环完了都没出现下降现象，所以是非递减排序的数组，第一个元素最小。
     }
-    //思路二
+    /**
+     * 两个指针二分查找，l一定是前面递增，r后面递增，l+1=r时，r就是要找的
+     */
+    public int minNumberInRotateArray2(int [] array) {
+        int l=0,r=array.length-1;
+        int mid=l;
+        while(array[l]>=array[r]){
+            if(r-l==1){
+                mid=r;
+                break;
+            }
+            mid=l+(r-l)/2;
+            if(array[mid]>=array[l]){
+                l=mid;
+            }else if(array[mid]<=array[r]){
+                r=mid;
+            }
+        }
+        return array[mid];
+    }
 }

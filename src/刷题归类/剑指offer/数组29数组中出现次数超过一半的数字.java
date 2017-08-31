@@ -74,8 +74,10 @@ public class 数组29数组中出现次数超过一半的数字 {
     static int moreThanHalfNum(int[] number) {
         int length = number.length;
         if (length == 0) return -1;
+
         int result = number[0];
         if (length == 1) return result;
+
         //记录数字出现的次数
         int times = 1;
         for (int i = 1; i < length; i++) {

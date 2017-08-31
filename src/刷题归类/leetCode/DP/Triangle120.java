@@ -23,7 +23,7 @@ public class Triangle120 {
      * 从位置（i,j）达到下一行的最小路径和为MP(i,j)
      * 自底向上
      * 为节省空间，用一维数组存储后面表示上一次要更新的
-     * f（i）=v(i)+min{f(i)+f(i+1)}
+     * f（i）=v(i)+min{f(i)，f(i+1)}
      */
     public int minimumTotal(List<List<Integer>> triangle) {
         int length = triangle.size();

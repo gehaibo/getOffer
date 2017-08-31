@@ -1,7 +1,8 @@
 package 刷题归类.leetCode.DP;
 
 /**
- * Created by Jackson on 2017/8/5.
+ * 给定一个充满非负数的网格，找到一个从左上到右下的路径，最小化沿其路径的所有数字的总和。
+ * 您只能在任何时间点向下或向右移动
  */
 public class MinimumPathSum64 {
 

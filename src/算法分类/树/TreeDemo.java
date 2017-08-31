@@ -336,9 +336,10 @@ public class TreeDemo {
         int depth = -1;
         while (!q.isEmpty()) {
             TreeNode curr = q.poll();
+
             if (curr == dummy) {
                 depth++;
-                if (!q.isEmpty()) {  // 使用DummyNode来区分不同的层， 如果下一层不是为空，则应该在尾部加DummyNode.
+                if (!q.isEmpty()) {  //  curr下一层不为空，即下一层全部入栈，则应该在尾部加DummyNode.
                     q.offer(dummy);
                 }
             }

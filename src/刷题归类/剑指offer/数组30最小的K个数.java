@@ -54,8 +54,8 @@ public class 数组30最小的K个数 {
     }
 
     public static void main(String[] args) {
-        int[] a = {4, 5, 1, 6, 2, 7, 3, 8};
-        ArrayList<Integer> result = GetLeastNumbers_Solution(a, 4);
+        int[] a = {45, 67, 33, 21, 22};
+        ArrayList<Integer> result = GetLeastNumbers_Solution(a, 2);
         System.out.println(result.toString());
     }
 

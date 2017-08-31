@@ -5,7 +5,7 @@ import java.util.Stack;
 /**
  * Created by Jackson on 2017/7/27.
  */
-public class EvaluateReversePolishNotation_150 {
+public class EvaluateReversePolishNotation150 {
     //["2", "1", "+", "3", "*"] -> ((2 + 1) * 3) -> 9
     public int evalRPN(String[] tokens) {
         String operators = "+-*/";
