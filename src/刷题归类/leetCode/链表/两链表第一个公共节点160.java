@@ -5,7 +5,7 @@ import java.util.HashMap;
 /**
  * Created by Jackson on 2017/5/10.
  */
-public class 两链表第一个公共节点_160 {
+public class 两链表第一个公共节点160 {
     public class ListNode {
         int val;
         ListNode next = null;

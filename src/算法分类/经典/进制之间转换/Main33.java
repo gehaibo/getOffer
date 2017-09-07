@@ -28,9 +28,9 @@ public class Main33 {
         if (ch >= '0' && ch <= '9')
             return ch - '0';
         else if (ch >= 'a' && ch <= 'z')
-            return ch - 'a' + 10;
+            return ch - 'a' + 10;//a-97
         else
-            return ch - 'A' + 36;
+            return ch - 'A' + 36;//A-65
     }
 
     //radix进制转十进制

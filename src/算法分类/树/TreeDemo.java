@@ -19,7 +19,7 @@ import java.util.Stack;
  * 2. 求二叉树的深度: getDepthRec（递归），getDepth
  * 3. 前序遍历，中序遍历，后序遍历: preorderTraversalRec, preorderTraversal, inorderTraversalRec, postorderTraversalRec
  * (https://en.wikipedia.org/wiki/Tree_traversal#Pre-order_2)
- * 4.分层遍历二叉树（按层次从上往下，从左往右）: levelTraversal, levelTraversalRec（递归解法）
+ * 4. 分层遍历二叉树（按层次从上往下，从左往右）: levelTraversal, levelTraversalRec（递归解法）
  * 5. 将二叉查找树变为有序的双向链表: convertBST2DLLRec, convertBST2DLL
  * 6. 求二叉树第K层的节点个数：getNodeNumKthLevelRec, getNodeNumKthLevel
  * 7. 求二叉树中叶子节点的个数：getNodeNumLeafRec, getNodeNumLeaf

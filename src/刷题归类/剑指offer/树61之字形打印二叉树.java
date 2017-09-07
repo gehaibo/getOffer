@@ -33,7 +33,7 @@ public class 树61之字形打印二叉树 {
 
             if (!s1.isEmpty()) {
                 ArrayList<Integer> ls = new ArrayList<>();
-                //一边存入节点，一遍下一层入栈
+                //一边存入节点，一边下一层入栈
                 while (!s1.isEmpty()) {
                     TreeNode p = s1.pop();
                     ls.add(p.val);

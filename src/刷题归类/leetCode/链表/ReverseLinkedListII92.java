@@ -36,6 +36,7 @@ public class ReverseLinkedListII92 {
         for (int i = 0; i < n - m; i++) {
             next = cur.next;
             cur.next=next.next;
+
             next.next=pre.next;
             pre.next=next;
         }

@@ -1,5 +1,8 @@
 package atest;
 
+import java.util.HashSet;
+import java.util.Set;
+
 /**
  * Created by Jackson on 2017/8/30.
  */
@@ -18,6 +21,8 @@ public class test {
             }
         }
 
+        Set<String> set = new HashSet<>();
+        set.add("aa");
         if (sum > n) {
             System.out.println(n + "是盈数");
         } else if (sum == n) {
