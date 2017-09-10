@@ -1,7 +1,7 @@
 package atest;
 
-import java.util.Arrays;
-import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Jackson on 2017/6/24.
@@ -27,17 +27,22 @@ public class Test1 {
 //        System.out.println(a[0]-'0');
         //String s="asc   df g";
         //String[] a=s.split("  ");
-        Scanner in = new Scanner(System.in);
-        String string=in.nextLine();
-        String[] a=string.split(" ");
-        int[] arr=new int[a.length];
-        for (int i = 0; i < a.length; i++) {
-            arr[i]=Integer.parseInt(a[i]);
-        }
+//        Scanner in = new Scanner(System.in);
+//        String string=in.nextLine();
+//        String[] a=string.split(" ");
+//        int[] arr=new int[a.length];
+//        for (int i = 0; i < a.length; i++) {
+////            arr[i]=Integer.parseInt(a[i]);
+//        }
 //        for ()
 //        char numChar = '-9';
 //        int  intNum = (int)numChar;
-        System.out.println(Arrays.toString(arr));
+//        System.out.println(Arrays.toString(arr));
+        List<String> list=new ArrayList<>();
+        List<Object> ob=new ArrayList<>();
+        //ob=list;
+        Object o=list;
+
     }
 
 }
